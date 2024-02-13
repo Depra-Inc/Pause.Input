@@ -1,0 +1,19 @@
+{
+    "name": "Depra.Pause.Input",
+    "rootNamespace": "Depra.Pause.Input",
+    "references": [
+        "GUID:511a5d938b5c8d540ad37bfcd2059f6e",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Depra.Pause.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
