@@ -1,12 +1,12 @@
 {
 	"name": "com.depra.pause.unity.input",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"displayName": "Depra.Pause.Input",
 	"description": "",
 	"unity": "2022.3",
 	"license": "Apache-2.0",
 	"dependencies": {
-		"com.depra.pause.unity": "0.0.3",
+		"com.depra.pause.unity": "0.0.11",
 		"com.unity.inputsystem": "1.7.0"
 	},
 	"keywords": [

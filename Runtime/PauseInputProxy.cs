@@ -10,23 +10,23 @@ namespace Depra.Pause.Services
 {
 	[DisallowMultipleComponent]
 	[AddComponentMenu(MENU_PATH + nameof(PauseInputProxy), DEFAULT_ORDER)]
-	internal sealed class PauseInputProxy : MonoBehaviour, IPauseInput
+	internal sealed class PauseInputProxy : MonoBehaviour, IPauseInputSource
 	{
 		private bool _paused;
 
-		public event Action Pause;
-		public event Action Resume;
+		public event Action PauseTriggered;
+		public event Action ResumeTriggered;
 
 		public void OnBackButtonPressed(InputAction.CallbackContext context)
 		{
 			_paused = !_paused;
 			if (_paused)
 			{
-				Resume?.Invoke();
+				ResumeTriggered?.Invoke();
 			}
 			else
 			{
-				Pause?.Invoke();
+				PauseTriggered?.Invoke();
 			}
 		}
 	}

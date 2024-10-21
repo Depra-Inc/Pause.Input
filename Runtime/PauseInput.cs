@@ -10,7 +10,7 @@ namespace Depra.Pause.Services
 {
 	[DisallowMultipleComponent]
 	[AddComponentMenu(MENU_PATH + nameof(PauseInput), DEFAULT_ORDER)]
-	internal sealed class PauseInput : MonoBehaviour, IPauseInput
+	internal sealed class PauseInput : MonoBehaviour, IPauseInputSource
 	{
 		[SerializeField] private PlayerInput _playerInput;
 		[SerializeField] private string _action = "Back";
@@ -19,8 +19,8 @@ namespace Depra.Pause.Services
 		private bool _paused;
 		private InputAction _inputAction;
 
-		public event Action Pause;
-		public event Action Resume;
+		public event Action PauseTriggered;
+		public event Action ResumeTriggered;
 
 		private void Awake() => _inputAction = _playerInput.actions
 			.FindActionMap(_actionMap)
@@ -43,11 +43,11 @@ namespace Depra.Pause.Services
 			_paused = !_paused;
 			if (_paused)
 			{
-				Resume?.Invoke();
+				ResumeTriggered?.Invoke();
 			}
 			else
 			{
-				Pause?.Invoke();
+				PauseTriggered?.Invoke();
 			}
 		}
 	}
